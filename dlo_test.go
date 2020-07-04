@@ -2,10 +2,11 @@ package swift
 
 import (
 	"bytes"
-	"github.com/ncw/swift/swifttest"
 	"net/http"
 	"testing"
 	"time"
+
+	"github.com/templain/swift/swifttest"
 )
 
 var srv *swifttest.SwiftServer

@@ -33,8 +33,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ncw/swift"
-	"github.com/ncw/swift/swifttest"
+	"github.com/templain/swift"
+	"github.com/templain/swift/swifttest"
 )
 
 var (

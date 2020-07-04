@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ncw/swift/rs"
+	"github.com/templain/swift/rs"
 )
 
 var (
