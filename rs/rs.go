@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/ncw/swift"
+	"github.com/templain/swift"
 )
 
 // RsConnection is a RackSpace specific wrapper to the core swift library which
