@@ -714,8 +714,8 @@ func (c *Connection) Call(targetUrl string, p RequestOpts) (resp *http.Response,
 	}
 	var req *http.Request
 	for {
-		var authToken string
-		if targetUrl, authToken, err = c.getUrlAndAuthToken(targetUrl, p.OnReAuth); err != nil {
+		//var authToken string
+		if targetUrl, _, err = c.getUrlAndAuthToken(targetUrl, p.OnReAuth); err != nil {
 			return //authentication failure
 		}
 		var URL *url.URL
