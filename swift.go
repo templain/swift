@@ -463,7 +463,11 @@ func (c *Connection) Authenticate() (err error) {
 	}
 	c.authLock.Lock()
 	defer c.authLock.Unlock()
-	return c.authenticate()
+
+	c.StorageUrl = c.AuthUrl
+	c.AuthToken = "dummy"
+
+	return nil
 }
 
 // Internal implementation of Authenticate
@@ -753,7 +757,8 @@ func (c *Connection) Call(targetUrl string, p RequestOpts) (resp *http.Response,
 			}
 		}
 		req.Header.Add("User-Agent", c.UserAgent)
-		req.Header.Add("X-Auth-Token", authToken)
+		//req.Header.Add("X-Auth-Token", authToken)
+		req.SetBasicAuth(c.UserName, c.ApiKey)
 
 		_, hasCL := p.Headers["Content-Length"]
 		AddExpectAndTransferEncoding(req, hasCL)
